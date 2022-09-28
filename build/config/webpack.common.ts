@@ -9,6 +9,12 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { tslOption } from "./tslOption";
 
 export const commonConfig: Configuration = {
+  watch: true,
+  watchOptions: {
+    // 特别的，虚拟机的文件改动只能轮询 https://webpack.js.org/configuration/watch/#watchoptionspoll
+    poll: 1000,
+    ignored: /node_modules/,
+  },
   context: projectRoot,
   entry: resolvePath(projectRoot, "./src/index.tsx"),
   output: {
