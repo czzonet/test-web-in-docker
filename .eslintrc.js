@@ -39,5 +39,6 @@ module.exports = {
     "for-direction": "off",
 
     "react/no-set-state": "off",
+    "linebreak-style": ["error", "unix"]
   },
 };
